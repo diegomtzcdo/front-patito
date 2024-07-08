@@ -6,6 +6,7 @@ import TrPedido from "../../components/Pedidos/TrPedido";
 import Estatus from "../../components/Pedidos/Estatus";
 import { toast } from "react-toastify";
 import Modal from 'react-modal'
+import { X } from 'react-feather';
 
 const customStyles = {
     content: {
@@ -38,12 +39,8 @@ export default function Pedidos() {
     const onHandleClickEstatus = (pedidoId: number) => {
         console.log(pedidoId);
         setCurrentPedido(pedidoId);
-        const pedidoFound = pedidos.find(p => p.pedidoId = pedidoId);
-        if(pedidoFound){
-            if(pedidoFound.estatus == "PENDIENTE") {
-                setModalIsOpen(true);
-            }
-        }
+        const estatus = pedidos.find(p => p.pedidoId == pedidoId)?.estatus;
+        if(estatus == "PENDIENTE") setModalIsOpen(true);
     }
 
     function closeModal() {
@@ -51,10 +48,20 @@ export default function Pedidos() {
     }
 
     const changeEstatus = async (estatus: "PENDIENTE" | "ENTREGADO" | "CANCELADO") => {
+        console.log('cambiando');
         try {
             const res = await cambiarEstatus(currentPedido, { nuevoEstatus: estatus });
             console.log(res.data.data);
             toast(res.data.message);
+            const pedidoFoundId = pedidos.findIndex(pedido => pedido.pedidoId === currentPedido);
+            if (pedidoFoundId >= 0) {
+                const pedidosActualizados = [...pedidos];
+                console.log('recien: ', pedidosActualizados);
+                pedidosActualizados[pedidoFoundId].estatus = res.data.data.estatus;
+                console.log('actualizados: ', pedidosActualizados);
+                setPedidos(pedidosActualizados);
+                toast(`El pedido ${currentPedido} se ha actualizado a ESTATUS - ${res.data.data.estatus}`);
+            }
         } catch (error) {
             console.log(error);
             toast(`Ocurrio un Error`);
@@ -69,8 +76,10 @@ export default function Pedidos() {
                 style={customStyles}
                 contentLabel="Cambiar Estutus"
             >
-                <h2 className="text-lg ">Cambiar Estatus</h2>
-                <button onClick={closeModal}>close</button>
+                <div className="flex justify-between align-middle items-center">
+                    <h2 className="text-lg ">Cambiar Estatus</h2>
+                    <button onClick={closeModal}><X size={16} color="red"/></button>
+                </div>
                 <div className="m-2">
                     <div>Deseas cambiar el estatus?<br />De ser asi, haz click en el nuevo estatus</div>
                     <div className="flex grap-2">

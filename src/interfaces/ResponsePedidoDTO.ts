@@ -11,5 +11,5 @@ export interface Data {
     clienteCorreo: string
     fecha: string
     cantidadArticulos: number
-    estatus: string
+    estatus: "PENDIENTE" | "ENTREGADO" | "CANCELADO"
 }

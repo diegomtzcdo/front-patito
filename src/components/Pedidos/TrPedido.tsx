@@ -18,7 +18,7 @@ export default function TrPedido(props: TrPedidoProps) {
 
     return (
         <tr className="border-b border-gray">
-            <td className="whitespace-nowrap px-6 py-4 text-center">{clienteNombre}</td>
+            <td className="whitespace-nowrap px-6 py-4 text-center">{clienteNombre} {pedidoId}</td>
             <td className="whitespace-nowrap px-6 py-4 text-center">{clienteDireccion}</td>
             <td className="whitespace-nowrap px-6 py-4 text-center">{clienteCorreo}</td>
             <td className="whitespace-nowrap px-6 py-4 text-center">{fecha}</td>

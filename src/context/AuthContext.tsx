@@ -96,6 +96,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 setToken(cookieToken);
                 return;
             }
+            setLoading(false);
             /*const cookies = Cookies.get();
             if (!cookies.token) {
               setIsAuthenticated(false);
