@@ -12,4 +12,4 @@ export const obtenerListado = async() => axiosInstance.get<ResponseListadoPedido
 
 export const cambiarEstatus = async(id: number, nuevoEstatus: NuevoEstatus) => axiosInstance.post<ResponsePedidoDTO>(`/pedido/cambiar-estatus/${id}`, nuevoEstatus);
 
-export const detallePedido = async(id: number) => axiosInstance.get<ResponseDetallePedido>(`/pedido/detalle/${id}`);
+export const detallePedido = async(id: string) => axiosInstance.get<ResponseDetallePedido>(`/pedido/detalle/${id}`);

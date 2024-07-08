@@ -8,6 +8,7 @@ import Button from "../../components/Button";
 import { crearPedido } from "../../api/pedido";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import formatNumber from "../../utils/formatoDinero";
 
 export interface ProductoInfo {
     producto: Daum;
@@ -47,10 +48,6 @@ export default function ResumenPedido() {
         }
         getAllProducts();
     }, [pedidos]);
-
-    function formatNumber(amount: number) {
-        return new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(amount);
-    }
 
     const realizarPedido = async () => {
         try {

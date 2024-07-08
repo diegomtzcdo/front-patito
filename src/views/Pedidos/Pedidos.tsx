@@ -40,7 +40,7 @@ export default function Pedidos() {
         console.log(pedidoId);
         setCurrentPedido(pedidoId);
         const estatus = pedidos.find(p => p.pedidoId == pedidoId)?.estatus;
-        if(estatus == "PENDIENTE") setModalIsOpen(true);
+        if (estatus == "PENDIENTE") setModalIsOpen(true);
     }
 
     function closeModal() {
@@ -78,7 +78,7 @@ export default function Pedidos() {
             >
                 <div className="flex justify-between align-middle items-center">
                     <h2 className="text-lg ">Cambiar Estatus</h2>
-                    <button onClick={closeModal}><X size={16} color="red"/></button>
+                    <button onClick={closeModal}><X size={16} color="red" /></button>
                 </div>
                 <div className="m-2">
                     <div>Deseas cambiar el estatus?<br />De ser asi, haz click en el nuevo estatus</div>
@@ -93,7 +93,8 @@ export default function Pedidos() {
                     </div>
                 </div>
             </Modal>
-            <h1 className="m-2 text-4xl text-primary">Pedidos</h1><table className="table-auto w-full">
+            <h1 className="m-2 text-4xl text-primary">Pedidos</h1>
+            <table className="table-auto w-full">
                 <tr className="border-b border-gray">
                     <th scope="col" className="px-6 py-4 text-center">Cliente Nombre</th>
                     <th scope="col" className="px-6 py-4 text-center">Cliente Direccion</th>
@@ -101,6 +102,7 @@ export default function Pedidos() {
                     <th scope="col" className="px-6 py-4 text-center">Fecha</th>
                     <th scope="col" className="px-6 py-4 text-center">Cantidad de Articulos</th>
                     <th scope="col" className="px-6 py-4 text-center">Estatus</th>
+                    <th scope="col" className="px-6 py-4 text-center">Detalle</th>
                 </tr>
                 {pedidos.length > 0 && pedidos.map(pedido => (
                     <TrPedido

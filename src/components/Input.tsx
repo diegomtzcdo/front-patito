@@ -43,7 +43,7 @@ export default function Input({ id, etiqueta, type, placeholder, validations = [
                         {...field}
                         type={type}
                         id={id}
-                        className={`mt-2.05 text-lg box-border w-full rounded-md bg-${error ? 'error-color' : 'gray'} border ${error ? 'border-error-color text-error-color placeholder-error-color focus:ring-error-color focus:border-error-color' : 'border-gray text-black placeholder-gray focus:ring-primary focus:border-primary'} text-sm rounded-lg block w-full p-2.5 `}
+                        className={`mt-2.05 text-lg box-border w-full rounded-md bg-white border ${error ? 'border-error-color text-error-color placeholder-error-color focus:ring-error-color focus:border-error-color' : 'border-gray text-black placeholder-gray focus:ring-primary focus:border-primary'} text-sm rounded-lg block w-full p-2.5 `}
                         placeholder={placeholder}
                     />
                 )}

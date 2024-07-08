@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Producto } from "../../interfaces/PedidoLoad";
 import { usePedidos } from "../../context/PedidosContext";
 import { toast } from "react-toastify";
+import formatNumber from "../../utils/formatoDinero";
 
 interface ProductoCardType {
     producto: Daum
@@ -60,10 +61,6 @@ export default function ProductoCard(props: ProductoCardType) {
             toast(`${nombre} agregado con exito`);
         }
     };
-
-    function formatNumber(amount: number) {
-        return new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(amount);
-    }
 
     return (
         <div className="flex bg-white shadow-lg gap-4 p-3 m-2 rounded-md justify-between">

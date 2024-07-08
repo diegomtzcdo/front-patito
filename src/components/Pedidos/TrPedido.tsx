@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Daum } from "../../interfaces/ResponseListadoPedido";
 import Estatus from "./Estatus";
 
@@ -26,6 +27,9 @@ export default function TrPedido(props: TrPedidoProps) {
 
             <td>
                 <Estatus estatus={estatus} pedidoId={pedidoId} onClickEstatus={onHandleClickEstatus} />
+            </td>
+            <td className="text-center text-primary hover:text-hover-color cursor-pointer underline">
+                <Link to={`/pedido/${pedidoId}`}>Detalle</Link>
             </td>
         </tr>
     )

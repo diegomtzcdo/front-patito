@@ -26,7 +26,12 @@ export default function Login() {
     ];
 
     const passwordValidators = [
-        { regex: /^\S+$/, message: 'La contraseña es requerida' },
+        { regex: /^.{4,16}$/, message: 'La contraseña debe tener entre 4 y 16 caracteres.' },
+        { regex: /[!@#$%^&*(),.?":{}|<>]/, message: 'La contraseña debe contener al menos un carácter especial.' },
+        { regex: /[a-z]/, message: 'La contraseña debe contener al menos una letra minúscula.' },
+        { regex: /[A-Z]/, message: 'La contraseña debe contener al menos una letra mayúscula.' },
+        { regex: /[0-9]/, message: 'La contraseña debe contener al menos un número.' },
+        { regex: /^\S*$/, message: 'La contraseña no debe contener espacios en blanco.' }
     ];
 
     const onSubmit = handleSubmit((data) => {

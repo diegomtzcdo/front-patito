@@ -9,7 +9,7 @@ export interface Data {
     cliente: Cliente
     productos: Producto[]
     fecha: string
-    estatus: string
+    estatus: "PENDIENTE" | "ENTREGADO" | "CANCELADO"
 }
 
 export interface Cliente {

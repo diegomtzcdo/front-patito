@@ -7,6 +7,7 @@ import DetalleProducto from './views/Productos/DetalleProducto';
 import { PedidosProvider } from './context/PedidosContext';
 import ResumenPedido from './views/Productos/ResumenPedido'
 import Pedidos from './views/Pedidos/Pedidos';
+import DetallePedido from './views/Pedidos/DetallePedido';
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             {
                 path: '/pedidos',
                 element: <Pedidos />
+            },
+            {
+                path: '/pedido/:id',
+                element: <DetallePedido/>
             }
         ]
     }

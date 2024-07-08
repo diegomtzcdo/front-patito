@@ -3,6 +3,7 @@ import { usePedidos } from "../../context/PedidosContext";
 import { toast } from "react-toastify";
 import Button from "../Button";
 import { Producto } from "../../interfaces/PedidoLoad";
+import formatNumber from "../../utils/formatoDinero";
 
 interface ComprarType {
     cantidadInicial: number;
@@ -21,10 +22,6 @@ export default function Comprar(props: ComprarType) {
     const [error, setError] = useState('');
 
     const { pedidos, updatePedidoLoad } = usePedidos();
-
-    function formatNumber(amount: number) {
-        return new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(amount);
-    }
 
     const onBuy = () => {
         console.log('comprar');
