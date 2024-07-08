@@ -27,11 +27,11 @@ export default {
 
 ## Imagenes
 
-![Login](/imagenesrm/Login.jpg)
+![Login](/imagenesrm/Login.png)
 
-![Pedidos](/imagenesrm/Pedidos.jpg)
+![Pedidos](/imagenesrm/Pedidos.png)
 
-![Resumen](/imagenesrm/Login.jpg)
+![Resumen](/imagenesrm/Login.png)
 
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
