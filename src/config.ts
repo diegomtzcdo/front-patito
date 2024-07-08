@@ -1,0 +1,1 @@
+export const API_URL = import.meta.env.VITE_API_URL|| "http://localhost:8081/patito-p3/v1";
