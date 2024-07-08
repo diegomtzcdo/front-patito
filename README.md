@@ -31,8 +31,9 @@ export default {
 
 ![Pedidos](/imagenesrm/Pedidos.png)
 
-![Resumen](/imagenesrm/Login.png)
+![Producto](/imagenesrm/Productos.png)
 
+![Resumen](/imagenesrm/Resumen.png)
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
